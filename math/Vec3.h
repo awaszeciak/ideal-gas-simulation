@@ -26,6 +26,7 @@ public:
     Vector3d& operator*=(double scalar);
     friend std::ostream& operator<<(std::ostream& os, const Vector3d& v);
 
+    
 private:
     double _x=0;
     double _y=0;
