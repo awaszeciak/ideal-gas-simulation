@@ -3,8 +3,8 @@
 class Vector3d{
 public:
     
-    Vector3d();
-    Vector3d(double x, double y, double z);
+    Vector3d()=default;
+    Vector3d(double x, double y, double z): x(x), y(y), z(z) {}
 
     Vector3d add(const Vector3d &other) const;
     Vector3d subtract(const Vector3d &other) const;
