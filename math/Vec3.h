@@ -1,31 +1,34 @@
 #pragma once
+#include <ostream>
 
 class Vector3d{
 public:
     
     Vector3d()=default;
-    Vector3d(double x, double y, double z): x(x), y(y), z(z) {}
+    Vector3d(double x, double y, double z): _x(x), _y(y), _z(z) {}
 
-    Vector3d add(const Vector3d &other) const;
-    Vector3d subtract(const Vector3d &other) const;
-    Vector3d scale(double value) const;
     Vector3d cross(const Vector3d &other) const;
     double dot(const Vector3d &other) const;
     double magnitude() const;
-
-    void addInPlace(const Vector3d &other);
-    void subtractInPlace(const Vector3d &other);
-    void scaleInPlace(double value);
-    void crossInPlace(double value);
-
+    Vector3d normalize() const;
     
     double getX() const;
     double getY() const;
     double getZ() const;
 
+    Vector3d operator+(const Vector3d& other) const;
+    Vector3d operator-(const Vector3d& other) const;
+    Vector3d operator*(double scalar) const;
+    bool operator==(const Vector3d& other) const;
+
+    Vector3d& operator+=(const Vector3d& other);
+    Vector3d& operator-=(const Vector3d& other);
+    Vector3d& operator*=(double scalar);
+    friend std::ostream& operator<<(std::ostream& os, const Vector3d& v);
+
 private:
-    double x=0;
-    double y=0;
-    double z=0;
+    double _x=0;
+    double _y=0;
+    double _z=0;
     
 };
