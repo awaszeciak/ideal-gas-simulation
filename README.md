@@ -13,4 +13,23 @@ Ideal Gas Simulation is a C++ project that visualizes the behavior of an ideal g
 1. Install required dependencies (e.g., OpenGL, GLUT).
 2. Clone the repository
 
-3. 
+
+## Visualizations
+
+### Particle Motion Inside the Container
+
+This figures present a real-time state of the system, 
+illustrating particle motion and color mapping based on kinetic energy.
+Particles are initialized with random positions and velocities inside the box.
+
+<p align="center">
+  <img src="images/simulation_1.png" width="600">
+</p>
+
+<p align="center">
+  <img src="images/simulation_2.png" width="600">
+</p>
+
+<p align="center">
+  <img src="images/simulation_3.png" width="600">
+</p>
