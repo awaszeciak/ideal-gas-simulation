@@ -107,6 +107,7 @@ Vector3d& Vector3d:: operator*=(double scalar){
     return *this;
 }
 
+
 std::ostream& operator<<(std::ostream& os, const Vector3d& v) {
     os << "(" << v._x << ", " << v._y << ", " << v._z << ")";
     return os;
@@ -125,6 +126,20 @@ double Vector3d:: getY() const{
 
 double Vector3d:: getZ() const{
     return _z;
+}
+
+
+//setters
+void Vector3d:: setX(double x){
+    _x=x;
+}
+
+void Vector3d:: setY(double y) {
+    _y=y;
+}
+
+void Vector3d:: setZ(double z) {
+    _z=z;
 }
 
 
