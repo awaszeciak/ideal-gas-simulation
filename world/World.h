@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
 #include "../core/Particle.h"
-#include "../core/PhysicsSystem.h"
+#include "../systems/PhysicsSystem.h"
 #include "../math/Vec3.h"
 
 

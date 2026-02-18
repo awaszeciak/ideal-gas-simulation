@@ -2,7 +2,7 @@
 #include <vector>
 #include <cassert>
 #include <cmath>
-#include "../core/PhysicsSystem.h"
+#include "../systems/PhysicsSystem.h"
 #include "../core/Particle.h"
 #include "../math/Vec3.h"
 

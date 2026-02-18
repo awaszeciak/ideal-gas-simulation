@@ -2,7 +2,7 @@
 #include "../math/Vec3.h"
 #include <cmath>
 #include <ostream>
-#include "Particle.h"
+#include "../core/Particle.h"
 #include "PhysicsSystem.h"
 
 
