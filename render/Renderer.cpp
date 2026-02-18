@@ -252,7 +252,7 @@ void Renderer::keyboard(unsigned char key, int x, int y){
             case '-':
             case '_':
                 _cameraDist += 0.5f;
-                if (_cameraDist < 3.0f) _cameraDist = 3.0f;
+                if (_cameraDist > 30.0f) _cameraDist = 30.0f;
                 glutPostRedisplay();
                 break;
 

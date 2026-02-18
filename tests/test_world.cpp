@@ -8,11 +8,11 @@ int main() {
 
     world.initializeRandom(30, 5.0);
     
-    std::cout << "=== STATYSTYKI ===" << std::endl;
-    std::cout << "Cząstek: " << world.getParticles().size() << std::endl;
-    std::cout << "Energia: " << world.getTotalEnergy() << std::endl;
-    std::cout << "Temperatura: " << world.getTemperature() << std::endl;
-    std::cout << "Ciśnienie: " << world.getPressure() << std::endl;
+    std::cout << "=== STATISTICS ===" << std::endl;
+    std::cout << "Particles: " << world.getParticles().size() << std::endl;
+    std::cout << "Energy: " << world.getTotalEnergy() << std::endl;
+    std::cout << "Temperature: " << world.getTemperature() << std::endl;
+    std::cout << "Pressure: " << world.getPressure() << std::endl;
     
     return 0;
 }

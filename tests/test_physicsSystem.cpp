@@ -13,7 +13,7 @@ void testUpdateTwoParticlesCollision() {
     PhysicsSystem system(10.0);
     std::vector<Particle> particles = {p1, p2};
 
-    // energia kinetyczna przed update
+    // kinetic energy before update
     auto KE = [](const Particle& a, const Particle& b) {
         double v1sq = a.getVelocity().getX()*a.getVelocity().getX() +
                       a.getVelocity().getY()*a.getVelocity().getY() +

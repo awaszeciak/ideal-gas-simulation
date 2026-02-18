@@ -3,9 +3,16 @@
 #include "../math/Vec3.h"
 #include <string>
 
+/**
+ * @brief Represents a single particle in the simulation.
+ * 
+ * Contains physical properties (position, velocity, mass, radius)
+ * and visual properties (color). Used by PhysicsSystem for dynamics
+ * and by Renderer for visualization.
+ */
 class Particle{
 public:
-    //constructors
+    // Constructors
     Particle(const Vector3d& position,
                    const Vector3d& velocity,
                    const Vector3d& acceleration,
@@ -28,6 +35,7 @@ public:
       _type(type)
     {}
 
+    /// @brief Default constructor with unit mass and white color.
     Particle()
     : _position(0,0,0),
       _velocity(0,0,0),
@@ -41,7 +49,7 @@ public:
       _type("default")
     {}
 
-    
+    /// @brief Minimal constructor for basic simulation. 
     Particle(const Vector3d& position,
          const Vector3d& velocity,
          double mass,
@@ -59,7 +67,7 @@ public:
     {}
 
 
-    // methods
+    // Getters
     const Vector3d& getPosition() const;
     const Vector3d& getVelocity() const;
     double getMass() const;
@@ -67,6 +75,7 @@ public:
     Vector3d getColor() const;
     Vector3d getForce() const;
 
+    // Setters
     void setPosition(const Vector3d& other);
     void setVelocity(const Vector3d& other);
     void setAcceleration(const Vector3d& other);

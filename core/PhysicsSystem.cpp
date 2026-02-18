@@ -12,6 +12,7 @@ PhysicsSystem::PhysicsSystem(double boxSize){
 
 void PhysicsSystem::update(std::vector<Particle>& particles, double dt){
 
+
     for(auto &p: particles){
         integrate(p, dt);
     }
@@ -28,7 +29,7 @@ void PhysicsSystem::update(std::vector<Particle>& particles, double dt){
 
 void PhysicsSystem::integrate(Particle& p, double dt) {
     Vector3d newPos = p.getPosition();
-    newPos = newPos + p.getVelocity();
+    newPos = newPos + p.getVelocity() * dt;
     p.setPosition(newPos);
 }
 

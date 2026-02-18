@@ -59,26 +59,23 @@ double World::getMaxSpeed() const {
 }
 
 void World::calculateStatistics() {
-    _totalEnergy = 0;
-    _temperature = 0;
-    _pressure = 0;
 
-    
+    double oldEnergy = _totalEnergy;
+    _totalEnergy = 0;
 
     std::fill(_velocityHistogram.begin(), _velocityHistogram.end(), 0);
-
+    
     for (const auto& p : _particles) {
         Vector3d vel = p.getVelocity();
-        double mass = p.getMass();
         double speed = vel.magnitude();
-
-        _totalEnergy += 0.5 * mass * speed * speed;
+        _totalEnergy += 0.5 * 1.0 * speed * speed;
 
         int bin = static_cast<int>(speed * 2);
         if (bin >= 0 && bin < _velocityHistogram.size()) {
             _velocityHistogram[bin]++;
         }
     }
+     
 
     if (!_particles.empty()) {
         _temperature = (2.0/3.0) * _totalEnergy / _particles.size();
@@ -86,9 +83,7 @@ void World::calculateStatistics() {
 
     double volume = _boxSize * _boxSize * _boxSize;
     _pressure = _particles.size() * _temperature / volume;
-
-
-     
+    
 }
 
 void World::update(double dt) {

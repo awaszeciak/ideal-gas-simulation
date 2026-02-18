@@ -11,7 +11,7 @@ int main(int argc, char** argv) {
     srand(time(nullptr));
 
     World world;
-    world.initializeRandom(100, 5.0);
+    world.initializeRandom(100, 5);
 
     Renderer renderer;
     if (!renderer.initialize(1024, 768, "Ideal Gas Simulation 3D")) {
