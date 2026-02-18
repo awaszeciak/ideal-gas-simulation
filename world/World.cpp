@@ -3,7 +3,7 @@
 #include <cmath>
 
 
-World::World() : _boxSize(10.0f) {
+World::World() : _boxSize(10.0f), _physicsSystem(_boxSize) {
     _velocityHistogram.resize(20, 0);
 }
 
@@ -29,7 +29,11 @@ void World::initializeRandom(int numParticles, double maxSpeed) {
         Particle p(position, velocity, 1.0, 0.2);
 
         _particles.push_back(p);
+
+        
     }
+
+    
 
     calculateStatistics();
 
@@ -59,6 +63,8 @@ void World::calculateStatistics() {
     _temperature = 0;
     _pressure = 0;
 
+    
+
     std::fill(_velocityHistogram.begin(), _velocityHistogram.end(), 0);
 
     for (const auto& p : _particles) {
@@ -80,10 +86,16 @@ void World::calculateStatistics() {
 
     double volume = _boxSize * _boxSize * _boxSize;
     _pressure = _particles.size() * _temperature / volume;
+
+
+     
 }
 
 void World::update(double dt) {
-    
+
+
+    _physicsSystem.update(_particles, dt);
+
     calculateStatistics();
 
     

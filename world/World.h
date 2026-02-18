@@ -1,12 +1,15 @@
 #pragma once
 #include <vector>
 #include "../core/Particle.h"
+#include "../core/PhysicsSystem.h"
 #include "../math/Vec3.h"
 
 class World {
     private:
         std::vector<Particle> _particles;
         float _boxSize;
+
+        PhysicsSystem _physicsSystem;
 
         double _totalEnergy;
         double _temperature;
