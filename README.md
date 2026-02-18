@@ -23,13 +23,13 @@ illustrating particle motion and color mapping based on kinetic energy.
 Particles are initialized with random positions and velocities inside the box.
 
 <p align="center">
-  <img src="images/simulation_1.png" width="600">
+  <img src="images/symulation_1.png" width="600">
 </p>
 
 <p align="center">
-  <img src="images/simulation_2.png" width="600">
+  <img src="images/symulation_2.png" width="600">
 </p>
 
 <p align="center">
-  <img src="images/simulation_3.png" width="600">
+  <img src="images/symulation_3.png" width="600">
 </p>
