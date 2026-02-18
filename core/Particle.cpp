@@ -18,13 +18,16 @@ double Particle:: getMass() const{
     return _mass;
 }
 
-
 double Particle:: getRadius() const{
     return _radius;
 }
 
 Vector3d Particle:: getForce() const{
     return _force;
+}
+
+Vector3d Particle:: getColor() const{
+    return _color;
 }
 
 // setters
