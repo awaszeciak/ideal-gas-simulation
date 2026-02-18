@@ -25,16 +25,9 @@ void Renderer::drawParticles() {
 
         Vector3d pos = p.getPosition();
         glTranslatef(pos.getX(), pos.getY(), pos.getZ());
-// 
-        Vector3d vel = p.getVelocity();
-        double speed = vel.magnitude();
 
-        float speedFactor = std::min(1.0, speed / 5.0f);
-        glColor3f(speedFactor, 0.2f, 1.0f - speedFactor);
-
-//  do  zmiany na color liczony z physics system tam gdzie wszystkie wartosci czastki
-        // Vector3d color = p.getColor();
-        // glColor3f(color.getX(), color.getY(), color.getZ())
+        Vector3d color = p.getColor();
+        glColor3f(color.getX(), color.getY(), color.getZ());
 
         GLUquadric* quad = gluNewQuadric();
         gluSphere(quad, 0.2, 16, 16);
@@ -222,6 +215,15 @@ void Renderer::drawInfo() {
 }
 
 void Renderer::update() {
+    static double lastTime = 0;
+    double currentTime = glutGet(GLUT_ELAPSED_TIME) / 1000.0;
+    double dt = currentTime - lastTime;
+
+    if (_worldPtr && dt > 0.01) {
+        _worldPtr->update(dt);
+        lastTime = currentTime;
+    }
+
     glutPostRedisplay();
 }
 
